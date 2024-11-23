@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Análise de Sentimentos</title>
+
+        <!-- jQuery e jQuery UI -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <div id="cabecalhoHome">
+            <div id="cabecalhoConteudo">
+                <h1>Comentários e Análise</h1>
+                <br>
+                <form id="mlForm">
+                    <label for="productUrl">URL do produto:</label>
+                    <input type="text" id="productUrl" placeholder="Cole a URL do produto aqui..." required />
+                    <br><br>
+                    <button type="submit">Analisar Comentários</button>
+                </form>
+                <br>
+            </div>
+        </div>
+
+        <!-- Estrutura das abas -->
+        <div id="tabs">
+            <ul>
+                <li><a href="#tab-1">Tabela</a></li>
+                <li><a href="#tab-2">Gráfico</a></li>
+            </ul>
+            <div id="tab-1">
+                <!-- Tabela -->
+                <table id="commentsTable" border="1">
+                    <thead>
+                        <tr>
+                            <th style="width: 3%;">Id</th>
+                            <th style="width: 91%;">Comentário</th>
+                            <th style="width: 6%;">Sentimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tab-2">
+                <!-- Gráfico -->
+                <button id="generateChart">Gerar Gráfico</button>
+                <canvas id="sentimentChart" width="600" height="300"></canvas>
+            </div>
+        </div>
+
+        <!-- Script -->
+        <script>
+            $(function () {
+                // Inicializa as abas do jQuery UI
+                $("#tabs").tabs();
+            });
+        </script>
+
+        <!-- Carrega o Chart.js, script da pagina e do gráfico -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="static/script.js"></script>
+        <script src="static/graph.js"></script>
+    </body>
+</html>

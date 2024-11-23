@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Sentimentos</title>
+</head>
+<body>   
+    <!-- Link para a página de comentários -->
+    <a href="/comentarios">Ir para Analisar Comentários</a>
+
+    <h1>Obter Comentários de Produtos</h1>
+    <form id="mlForm">
+        <label for="productUrl">Digite a URL do produto:</label>
+        <input type="text" id="productUrl" placeholder="Cole a URL do produto aqui..." required />
+        <button type="submit">Analisar Comentários</button>
+    </form>
+    <h2>Comentários:</h2>
+    <table id="commentsTable" border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Comentário</th>
+                <th>Sentimento</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <button id="generateChart">Gerar Gráfico</button>
+    <canvas id="sentimentChart" width="400" height="200"></canvas>
+
+    <!-- Carregue o Chart.js antes do script do gráfico -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="static/script.js"></script>
+    <script src="static/graph.js"></script>
+
+</body>
+</html>
